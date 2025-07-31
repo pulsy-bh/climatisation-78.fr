@@ -2,7 +2,8 @@
 layout: default
 permalink: /devis/
 title: "Obtenez votre devis en ligne gratuitement | KLIMAT | 06 33 35 23 10"
-description: "Pour obtenir un devis personnalisé en quelques clics, nous vous invitons à remplir notre formulaire. Ce dernier se fait en ligne et est totalement gratuit !"
+description: "Pour obtenir un devis personnalisé en quelques clics, nous vous invitons à remplir notre formulaire. Ce
+dernier se fait en ligne et est totalement gratuit !"
 ---
 
 <section class="slide devis-bg">
@@ -14,25 +15,33 @@ description: "Pour obtenir un devis personnalisé en quelques clics, nous vous i
 <section class="one devis">
 	<div class="container">
 		<div id="devis" class="contact">
+			<form id="devisForm" method="post" action="{{ site.data.company.url.notify }}"
+				enctype="multipart/form-data">
+				<div class="row">
+					<div class="col-sm-6">
 
-			<div class="row">
-				<div class="col-sm-6">
-					<form action="https://formspree.io/f/xzzrzply" method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
+						<input type="hidden" name="type" value="devis" />
+						<input type="hidden" name="website" value="{{ site.data.company.website }}" />
+						<input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
+						<input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
+						<input type="hidden" name="condition" value="on" />
+						<input type="hidden" name="firstName" value="" />
 						<fieldset>
 							<div class="row">
 								<div class="col-sm-12">
 									<div class="form-group has-feedback">
 										<label for="prenom">Prénom</label>
-										<input type="text" class="form-control" id="prenom" name="prenom" value="prenom"
-											placeholder="Prénom">
+										<input type="text" class="form-control" id="prenom" name="lastname"
+											placeholder="Prénom" required>
 									</div>
 								</div>
 
 								<div class="col-sm-12">
 									<div class="form-group has-feedback">
 										<label for="nom">Nom</label>
-										<input type="text" class="form-control" id="nom" name="nom" value="nom"
-											placeholder="Nom">
+										<input type="text" class="form-control" id="nom" name="name" placeholder="Nom"
+											required>
 									</div>
 								</div>
 							</div>
@@ -41,15 +50,15 @@ description: "Pour obtenir un devis personnalisé en quelques clics, nous vous i
 								<div class="col-sm-12">
 									<div class="form-group has-feedback">
 										<label for="email">Email</label>
-										<input type="text" class="form-control" id="email" name="email" value="email"
-											placeholder="text@exemple.fr">
+										<input type="text" class="form-control" id="email" name="email"
+											placeholder="text@exemple.fr" required>
 									</div>
 								</div>
 								<div class="col-sm-12">
 									<div class="form-group has-feedback">
 										<label for="telephone">Téléphone</label>
 										<input type="text" class="form-control" id="telephone" name="telephone"
-											value="phone" placeholder="06 00 00 00 00">
+											placeholder="06 00 00 00 00">
 									</div>
 								</div>
 							</div>
@@ -57,74 +66,84 @@ description: "Pour obtenir un devis personnalisé en quelques clics, nous vous i
 								<div class="col-sm-4">
 									<div class="form-group has-feedback">
 										<label for="code-postal">Code Postal</label>
-										<input type="text" class="form-control" id="code-postal" name="code-postal"
-											value="code-postal" placeholder="Code Postal">
+										<input type="text" class="form-control" id="code-postal" name="zipcode"
+											placeholder="Code Postal">
 									</div>
 								</div>
 								<div class="col-sm-8">
 									<div class="form-group has-feedback">
 										<label for="ville">Ville</label>
-										<input type="text" class="form-control" id="ville" name="ville" value="ville"
+										<input type="text" class="form-control" id="ville" name="city"
 											placeholder="Ville">
 									</div>
 								</div>
 							</div>
 						</fieldset>
-				</div>
-				<div class="col-sm-6">
-					<div class="form-group has-feedback">
-						<label>Type de logement :</label>
-						<div class="checkbox" style="margin-top: 0;">
-							<input type="checkbox" id="type" name="type-logement" value="Maison" checked>
-							Maison
-						</div>
-						<div class="checkbox" style="margin-top: 0;">
-							<input type="checkbox" id="type" name="type-de-logement" value="Appartement">
-							Appartement
+					</div>
+					<div class="col-sm-6">
+						<div class="form-group has-feedback">
+							<label>Type de logement :</label>
+							<div class="checkbox" style="margin-top: 0;">
+								<input type="checkbox" id="type" name="type-logement" value="Maison" checked>
+								Maison
+							</div>
+							<div class="checkbox" style="margin-top: 0;">
+								<input type="checkbox" id="type" name="type-de-logement" value="Appartement">
+								Appartement
 
+							</div>
+						</div>
+						<p></p>
+						<div class="form-group has-feedback">
+							<label for="installation-souhaitee">Installation souhaitée</label>
+							<select class="form-control" id="installation-souhaitee" name="installation-souhaitee"
+								required>
+								<option value="Chauffage">Chauffage</option>
+								<option value="Climatisation">Climatisation</option>
+								<option value="Eau chaude sanitaire">Eau chaude sanitaire</option>
+							</select>
+						</div>
+						<div class="form-group has-feedback">
+							<label for="type-chauffage-deja-installe">Type de chauffage déjà installé</label>
+							<select class="form-control" id="type-chauffage-deja-installe"
+								name="type-chauffage-deja-installe" required>
+								<option value="">Sélectionnez un type de chauffage</option>
+								<option value="Electrique">Electrique</option>
+								<option value="Fioul">Fioul</option>
+								<option value="Gaz naturel">Gaz naturel</option>
+								<option value="GPL">GPL</option>
+								<option value="Pompe à chaleur">Pompe à chaleur</option>
+								<option value="Autre">Autre</option>
+							</select>
+						</div>
+						<div class="form-group has-feedback">
+							<label for="delai">Délai</label>
+							<select class="form-control" id="delai" name="delai" required>
+								<option value="Immédiat">Immédiat</option>
+								<option value="D'ici 3 mois">D'ici 3 mois</option>
+								<option value="De 3 à 6 mois">De 3 à 6 mois</option>
+								<option value="Au delà de 6 mois">Au delà de 6 mois</option>
+							</select>
 						</div>
 					</div>
-					<p></p>
-					<div class="form-group has-feedback">
-						<label for="installation-souhaitee">Installation souhaitée</label>
-						<select class="form-control" id="installation-souhaitee" name="installation-souhaitee">
-							<option value="Chauffage">Chauffage</option>
-							<option value="Climatisation">Climatisation</option>
-							<option value="Eau chaude sanitaire">Eau chaude sanitaire</option>
-						</select>
-					</div>
-					<div class="form-group has-feedback">
-						<label for="type-chauffage-deja-installe">Type de chauffage déjà installé</label>
-						<select class="form-control" id="type-chauffage-deja-installe"
-							name="type-chauffage-deja-installe">
-							<option value="">Sélectionnez un type de chauffage</option>
-							<option value="Electrique">Electrique</option>
-							<option value="Fioul">Fioul</option>
-							<option value="Gaz naturel">Gaz naturel</option>
-							<option value="GPL">GPL</option>
-							<option value="Pompe à chaleur">Pompe à chaleur</option>
-					</div>
-					<div class="form-group has-feedback">
-						<label for="delai">Délai</label>
-						<select class="form-control" id="delai" name="delai">
-							<option value="Immédiat">Immédiat</option>
-							<option value="D'ici 3 mois">D'ici 3 mois</option>
-							<option value="De 3 à 6 mois">De 3 à 6 mois</option>
-							<option value="Au delà de 6 mois">Au delà de 6 mois</option>
-						</select>
-					</div>
 				</div>
-			</div>
-			<div class="form-group has-feedback">
-				<label for="message">Message</label>
-				<textarea class="form-control" id="message" name="message" rows="6">message</textarea>
-			</div>
-			<br>
-			<div class="text-center">
-				<button type="submit" class="button">Envoyer</button>
-			</div>
+				<div class="form-group has-feedback">
+					<label for="message">Message</label>
+					<textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+				</div>
+				<br>
+				<div class="form-group">
+					<div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
+					</div>
+					<br />
+					<div id="devis-form-response" class="text-white" style="color: #000 !important; font-size: 1rem;">
+					</div>
+					<input style="display: none" type="submit" value="Submit" class="wpcf7-form-control wpcf7-submit" />
+				</div>
+				<div class="text-center">
+					<button type="submit" class="button">Envoyer</button>
+				</div>
 			</form>
 		</div>
-	</div>
 	</div>
 </section>
