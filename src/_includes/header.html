@@ -1,0 +1,36 @@
+<header class="slider">
+  <div class="menu">
+      <div class="container">
+          <div class="p-flex">
+              <a href="{{ site.baseurl }}/" style="display: block;">
+                  <img src="{{ site.baseurl }}/assets/img/logo.png" alt="logo Klimat" class="img-responsive">
+              </a>
+              <div class="navbar-menu">
+                  {% include navbar.html %}
+              </div>
+              <a href="tel:{{ site.data.company.phone1 }}"
+                  style="display: flex; gap: 4px; align-items: center; justify-content: space-between;"
+                  class="button" id="navPhone"><i class="fa fa-phone" aria-hidden="true"></i>
+                  <span>{{ site.data.company.phone1 }}</span></a>
+          </div>
+      </div>
+  </div>
+  {% if page.url == "/" %}
+      <div class="middle">
+          <div class="container">
+              <img src="{{ site.baseurl }}/assets/img/logo-RGE.png" alt="logo RGE Qualipac"
+                  style="width:10%; transform: rotate(0.01turn); margin-right:3%; padding-top:2%; float: right ">
+              <div class="flex-md-row-reverse row">
+                  <div class="col-sm-6">
+                      {% include pre-devis.html %}
+                  </div>
+                  <div class="col-sm-6">
+                      <div class="pad30"></div>
+                      <h1>Optez pour notre climatisation partout dans le 78</h1>
+                      <h2>Pour une estimation gratuite, remplissez notre formulaire en ligne</h2>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {% endif %}
+</header>

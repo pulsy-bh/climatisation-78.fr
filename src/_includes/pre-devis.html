@@ -1,0 +1,61 @@
+<div class="pre-reservation">
+    <p style="color: #fff; font-size: 25px; font-weight: 300;">Un devis personnalisé en quelques clics.</p>
+    <form action="https://formspree.io/f/xqaqazvd" method="POST" class="p20">
+
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 clabel">
+                <div class="form-group has-feedback">
+                    <label for="nom">Nom</label><br />
+                    <input type="text" name="nom" class="form-control" placeholder="Nom">
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6  clabel">
+                <div class="form-group has-feedback">
+                    <label for="telephone">Tél</label>
+                    <input type="text" name="telephone" class="form-control" placeholder="Tél">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 clabel ">
+                <div class=" padl form-group has-feedback">
+                    <label for="email">Email</label><br />
+                    <input type="email" name="email" class="form-control" placeholder="text@exemple.fr">
+                </div>
+            </div>
+            <div class="col-xs-6  clabel">
+                <div class="form-group has-feedback">
+                    <label for="code-postal">Code postal</label><br />
+                    <input type="text" name="code-postal" class="form-control" placeholder="Code postal">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                    <label for="prestation">Prestation</label>
+                    <select name="prestation" class="form-control">
+                        <option value="Climatisation">Climatisation</option>
+                        <option value="Pompe à chaleur">Pompe à chaleur</option>
+                        <option value="Chauffe-eau">Chauffe-eau</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="form-group has-feedback">
+                    <label for="message">Message</label>
+                    <textarea name="message" class="form-control" rows="6"></textarea>  
+                </div>
+            </div>
+        </div>
+
+
+        <div class="text-center">
+            <input id="btSubmit" class="button" type="submit" value="Envoyer">
+        </div>
+        <br>
+    </form>
+</div>

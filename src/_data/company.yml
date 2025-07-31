@@ -1,0 +1,39 @@
+####################
+# CONFIG
+####################
+name: "klimat"
+address: "11 Route de Leuville"
+zipCode: "91310"
+city: "Linas"
+googleMap: ""
+
+phone1: "06 33 35 23 10"
+phone2: "06 33 35 23 10"
+
+id_company: 430
+name_website: "climatisation-78.fr"
+addressOnline: "http://www.climatisation-78.fr/"
+
+email: "LOIC.SEISEN@klimat.fr"
+email2: ""
+email_copie: "hedi@bhgroupe.fr;hind@bhgroupe.fr;adrien@bhgroupe.fr"
+
+owner: "climatisation-78.fr"
+capital: "20000"
+headOffice: "11 Route de Leuville 91310 Linas" 
+rcs: "Meaux B 822 402 673"
+comDirector: "Antonio Navarro"
+ovh: "<h2>OVH</h2>Société par actions simplifiée au capital de 10 000 000 €,<br>Dont le siège social est établi 2, rue Kellermann 59100 Roubaix<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Tourcoing 424 761 419"
+gandi: "<h2>Gandi</h2><p>Société par actions simplifiée au capital 300 000 €,<br>Dont le siège social est établi 63 Boulevard Massena 75013 Paris<br>Immatriculée au Registre du Commerce et des Sociétés sous le numéro RCS Paris B 423 093 459</p>"
+hebergement: $gandi
+
+website: 239
+
+recaptcha:
+  client: 6LdEro4rAAAAACXZPXlnUwn1ms8ezpIrvRVNC8Ib
+  server: 6LdEro4rAAAAACPgH4YEvt1Aa2A86Z67IQtMO4Tt
+  
+lang: fr
+url:
+  notify: 'https://jgviaboye9.execute-api.eu-west-3.amazonaws.com/prod/notify'
+  redirect: '/message-envoye'
