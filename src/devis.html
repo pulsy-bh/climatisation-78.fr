@@ -5,156 +5,126 @@ title: ""
 description: ""
 ---
 
-<section class="mini-slider bg-sim wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
+<section class="slide devis-bg">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<h1>Demande de renseignement</h1>
-			</div>
-		</div>
+		<h1 class="text-center">Obtenez votre devis en ligne</h1>
 	</div>
 </section>
-<section class="one bggrey2">
+
+<section class="one devis">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<h2 class="inline-block">Vous souhaitez plus de <strong>renseignements ?</strong></h2>
-				<p class="intro text-center">Pour que vous puissiez vous faire une idée des frais de scolarité que vous
-					allez devoir payer pour les cours d'école à distance de votre ou de vos enfants durant une année,
-					contactez nous via ce formulaire !</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="one">
-	<div class="container">
-		<div id="devis" class="bgform">
+		<div id="devis" class="contact">
+
 			<div class="row">
-				<div class="col-sm-12">
-					<form role="form" id="devisForm" method="post" action="{{ site.data.company.url.notify }}">
-						<input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
-						<input type="hidden" name="type" value="devis" />
-						<input type="hidden" name="website" value="{{ site.data.company.website }}" />
-						<input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
-						<input type="hidden" name="firstName" value="" />
-						<input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" name="lastname" class="form-control" placeholder="Prénom"
-												required>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" name="name" class="form-control" placeholder="Nom"
-												required>
-										</div>
+				<div class="col-sm-6">
+					<form action="https://formspree.io/f/xzzrzply" method="POST" enctype="multipart/form-data">
+						<fieldset>
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group has-feedback">
+										<label for="prenom">Prénom</label>
+										<input type="text" class="form-control" id="prenom" name="prenom" value="prenom"
+											placeholder="Prénom">
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" name="address" class="form-control" placeholder="Adresse"
-												required>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" name="zipcode" class="form-control"
-												placeholder="Code postal" required>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="text" name="city" class="form-control" placeholder="Ville"
-												required>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="tel" name="phone" class="form-control"
-												placeholder="Téléphone" required>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group">
-											<input type="email" name="email" class="form-control" placeholder="Email"
-												required>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<div class="form-group">
-											<select name="prestation" class="form-control" required>
-												<option value="">Prestation</option>
-												<option value="Cours dispensés en formule à distance">Cours dispensés en
-													formule à distance</option>
-												<option
-													value="Cours dispensés en formule à distance et visioconférence">
-													Cours dispensés en formule à distance et visioconférence</option>
-											</select>
-										</div>
-									</div>
-									<div class="col-sm-12">
-										<div class="form-group">
-											<select name="classe" class="form-control" required>
-												<option value="">Classe</option>
-												<option value="Petite section maternelle">Petite section maternelle
-												</option>
-												<option value="Moyenne section maternelle">Moyenne section maternelle
-												</option>
-												<option value="Grande section maternelle">Grande section maternelle
-												</option>
-												<option value="CP">CP</option>
-												<option value="CE1">CE1</option>
-												<option value="CE2">CE2</option>
-												<option value="CM1">CM1</option>
-												<option value="CM2">CM2</option>
-												<option value="6ème">6ème</option>
-												<option value="5ème">5ème</option>
-												<option value="4ème">4ème</option>
-												<option value="3ème">3ème</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-sm-12">
-										<div class="form-group">
-											<textarea rows="6" name="message" placeholder="Message" class="form-control"
-												required></textarea>
-										</div>
+
+								<div class="col-sm-12">
+									<div class="form-group has-feedback">
+										<label for="nom">Nom</label>
+										<input type="text" class="form-control" id="nom" name="nom" value="nom"
+											placeholder="Nom">
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="checkbox info-rgpd">
-								<label>
-									<input type="checkbox" name="condition" required>
-									J'accepte que mes données soient utilisées pour traiter ma demande
-								</label>
+
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="form-group has-feedback">
+										<label for="email">Email</label>
+										<input type="text" class="form-control" id="email" name="email" value="email"
+											placeholder="text@exemple.fr">
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="form-group has-feedback">
+										<label for="telephone">Téléphone</label>
+										<input type="text" class="form-control" id="telephone" name="telephone"
+											value="phone" placeholder="06 00 00 00 00">
+									</div>
+								</div>
 							</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="form-group has-feedback">
+										<label for="code-postal">Code Postal</label>
+										<input type="text" class="form-control" id="code-postal" name="code-postal"
+											value="code-postal" placeholder="Code Postal">
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="form-group has-feedback">
+										<label for="ville">Ville</label>
+										<input type="text" class="form-control" id="ville" name="ville" value="ville"
+											placeholder="Ville">
+									</div>
+								</div>
+							</div>
+						</fieldset>
+				</div>
+				<div class="col-sm-6">
+					<div class="form-group has-feedback">
+						<label>Type de logement :</label>
+						<div class="checkbox" style="margin-top: 0;">
+							<input type="checkbox" id="type" name="type-logement" value="Maison" checked>
+							Maison
 						</div>
-						<div class="form-group">
-							<div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}"></div>
-							<br />
-							<div id="devis-form-response"></div>
+						<div class="checkbox" style="margin-top: 0;">
+							<input type="checkbox" id="type" name="type-de-logement" value="Appartement">
+							Appartement
+
 						</div>
-						<div class="buttondevis text-center">
-							<button type="submit" class="button2 btn-form success">
-								<span class='txt'>Envoyer</span>
-							</button>
-						</div>
-					</form>
+					</div>
+					<p></p>
+					<div class="form-group has-feedback">
+						<label for="installation-souhaitee">Installation souhaitée</label>
+						<select class="form-control" id="installation-souhaitee" name="installation-souhaitee">
+							<option value="Chauffage">Chauffage</option>
+							<option value="Climatisation">Climatisation</option>
+							<option value="Eau chaude sanitaire">Eau chaude sanitaire</option>
+						</select>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="type-chauffage-deja-installe">Type de chauffage déjà installé</label>
+						<select class="form-control" id="type-chauffage-deja-installe"
+							name="type-chauffage-deja-installe">
+							<option value="">Sélectionnez un type de chauffage</option>
+							<option value="Electrique">Electrique</option>
+							<option value="Fioul">Fioul</option>
+							<option value="Gaz naturel">Gaz naturel</option>
+							<option value="GPL">GPL</option>
+							<option value="Pompe à chaleur">Pompe à chaleur</option>
+					</div>
+					<div class="form-group has-feedback">
+						<label for="delai">Délai</label>
+						<select class="form-control" id="delai" name="delai">
+							<option value="Immédiat">Immédiat</option>
+							<option value="D'ici 3 mois">D'ici 3 mois</option>
+							<option value="De 3 à 6 mois">De 3 à 6 mois</option>
+							<option value="Au delà de 6 mois">Au delà de 6 mois</option>
+						</select>
+					</div>
 				</div>
 			</div>
+			<div class="form-group has-feedback">
+				<label for="message">Message</label>
+				<textarea class="form-control" id="message" name="message" rows="6">message</textarea>
+			</div>
+			<br>
+			<div class="text-center">
+				<button type="submit" class="button">Envoyer</button>
+			</div>
+			</form>
 		</div>
+	</div>
 	</div>
 </section>

@@ -5,109 +5,80 @@ title: ""
 description: ""
 ---
 
-<section class="mini-slider bg-contact wow fadeIn" data-wow-duration="1s" data-wow-delay="0">
+<section class="slide contact-bg">
 	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-				<h1>Notre formulaire de contact</h1>
-			</div>
-		</div>
+		<h1 class="text-center">Contactez-nous !</h1>
 	</div>
 </section>
-<section class="one bggrey2">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 text-center">
-				<h2 class="inline-block">Je souhaite <strong>être rappelé</strong></h2>
-				<p class="intro text-center">
-					Vous avez une question sur nos méthodes d'enseignement ? Nos cours ? L'IEF
-					et ses avantages ? Nous vous invitons à compléter le formulaire de contact ci-dessous pour obtenir
-					de plus amples informations.
-				</p>
-				<p class="intro text-center">
-					Prenez contact avec notre groupe scolaire privé qui pratique l'enseignement
-					à distance.
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="one">
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
-			</div>
-			<div class="col-sm-6">
-				<div class="row form-contact">
-					<form class="contact_content-form" id="contactForm" method="post" action="{{ site.data.company.url.notify }}">
-						<input type="hidden" name="lang" value="fr" />
-						<input type="hidden" name="redirectUrl" value="{{site.data.company.url.redirect}}" />
-						<input type="hidden" name="type" value="contact" />
-						<input type="hidden" name="website" value="{{ site.data.company.website }}" />
-						<input type="hidden" name="lang" value="{{ site.data.company.lang }}" />
-						<input type="hidden" name="firstName" value="" />
-						<input type="hidden" name="key" value="{{ site.data.company.recaptcha.server }}" />
 
-						<div class="col-sm-6">
-							<div class="form-group">
-								<input type="text" class="form-control" name="name" placeholder="Nom" required>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="form-group">
-								<input type="text" class="form-control" name="lastname" placeholder="Prénom" required>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="form-group">
-								<input type="tel" class="form-control" name="phone" placeholder="Téléphone"
-									required>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="form-group">
-								<input type="email" class="form-control" name="email" placeholder="Email" required>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="form-group">
-								<textarea class="form-control" name="message" rows="6" placeholder="Message"
-									required></textarea>
-							</div>
-						</div>
-						<div class="col-sm-12">
-							<div class="form-group">
-								<div class="checkbox info-rgpd" style="margin-top: 0;">
-									<label>
-										<input type="checkbox" name="condition" required>
-										J'accepte que mes données soient utilisées pour traiter ma demande
-									</label>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="g-recaptcha" data-sitekey="{{ site.data.company.recaptcha.client }}">
-								</div>
-								<br />
-								<div id="contact-form-response"></div>
-							</div>
-							<div class="buttondevis text-center">
-								<button type="submit" class="button2 btn-form">
-									<span class='txt'>Envoyer</span>
-								</button>
-							</div>
-						</div>
-					</form>
-
-				</div>
+<section class="one contact">
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="icon pull-left">
+				<i class="fa fa-phone" aria-hidden="true"></i>
 			</div>
-			<div class="col-sm-6">
-				{% include contact-info.html %}
+			<p class="pad10"><strong>Téléphone </strong></p>
+			<p><a href="tel:{{ site.data.company.phone1 }}">{{ site.data.company.phone1 }}</a></p>
+		</div>
+		<div class="col-sm-4">
+			<div class="icon pull-left">
+				<i class="fa fa-map-marker" aria-hidden="true"></i>
+			</div>
+			<p class="pad10"><strong>Adresse</strong></p>
+			<p>{{ site.data.company.address }} {{ site.data.company.zipCode }} {{ site.data.company.city }}</p>
+		</div>
+		<div class="col-sm-4">
+			<div class="icon pull-left">
+				<i class="fa fa-envelope" aria-hidden="true"></i>
+			</div>
+			<p class="pad10"><strong>Email </strong></p>
+			<p><a href="mailto:{{ site.data.company.email }}">{{ site.data.company.email }}</a></p>
+		</div>
+	</div>
+	<div class="pad20"></div>	
+
+		<div class="row">
+			<div class="col-sm-12 form-contact">
+
+		<div class="div01"></div>
+					<form action="https://formspree.io/f/xwpopegk" method="POST">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group has-feedback">
+								<input type="text" class="form-control " id="nom" name="nom" value="name" placeholder="Nom">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group has-feedback">
+								<input type="text" class="form-control " id="entreprise" name="entreprise" value="company" placeholder="Entreprise ">
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group has-feedback">
+								<input type="text" class="form-control " id="email" name="email" value="email" placeholder="Email">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group has-feedback">
+								<input type="text" class="form-control " id="telephone" name="telephone" value="phone" placeholder="Telephone">
+							</div>
+						</div>
+						
+					</div>
+					
+
+					<div class="form-group has-feedback">
+						<textarea rows="6" name="message" class="form-control" id="message" placeholder="Message">message</textarea>
+					</div>
+					<div class="buttondevis ">
+						<button type="submit" class="button">Envoyer</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 </section>
-<div class="map">
-	<iframe
-		src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2632.086030573663!2d2.283442915669596!3d48.72294777927446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67796f4c8945d%3A0x6f8868c552ce0fa!2s12%20Rue%20Ren%C3%A9%20Cassin%2C%2091300%20Massy%2C%20France!5e0!3m2!1sfr!2smu!4v1571031792687!5m2!1sfr!2smu"
-		width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-</div>
